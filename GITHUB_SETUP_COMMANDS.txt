@@ -1,0 +1,52 @@
+# ============================================================================
+# GitHub Repository Setup Commands
+# ============================================================================
+# 
+# STEP 1: Create repository on GitHub (manual)
+# Go to: https://github.com/new
+# Name: traktor
+# Description: Autonomous DJ system for Traktor Pro 3 with AI vision-guided control
+# Private: YES (recommended)
+# Don't initialize with README
+#
+# STEP 2: Run these commands (replace YOUR_USERNAME)
+# ============================================================================
+
+cd C:/traktor
+
+# Add GitHub remote (REPLACE YOUR_USERNAME!)
+git remote add origin https://github.com/YOUR_USERNAME/traktor.git
+
+# Rename branch to main (if needed)
+git branch -M main
+
+# Push to GitHub
+git push -u origin main
+
+# ============================================================================
+# STEP 3: Verify on GitHub
+# ============================================================================
+# Go to: https://github.com/YOUR_USERNAME/traktor
+# 
+# CHECK:
+# ✅ .gitignore is present
+# ✅ config.template.py is present (safe)
+# ✅ .env.example is present
+# ✅ README.md is visible
+# ❌ config.py is NOT present (protected!)
+# ❌ .env is NOT present (protected!)
+# ❌ NO API keys visible in any file
+#
+# If you see ANY API keys → DELETE REPO IMMEDIATELY!
+#
+# ============================================================================
+# STEP 4: Clone repository to verify (optional)
+# ============================================================================
+# cd /tmp
+# git clone https://github.com/YOUR_USERNAME/traktor.git traktor-test
+# cd traktor-test
+# grep -r "sk-ant-api03" .  # Should return nothing
+# grep -r "sk-or-v1" .      # Should return nothing
+#
+# If either command finds keys → DELETE GITHUB REPO!
+# ============================================================================
