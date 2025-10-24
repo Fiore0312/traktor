@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python verify_midi_setup.py:*)",
+      "Bash(python:*)",
+      "Bash(tasklist:*)",
+      "Bash(awk:*)",
+      "Bash(timeout 30 python:*)",
+      "Bash(pip install:*)",
+      "Bash(echo $ANTHROPIC_API_KEY)",
+      "Bash(./venv/Scripts/python:*)",
+      "Bash(test:*)",
+      "Bash(cat:*)",
+      "Bash(git init:*)",
+      "Bash(git config:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

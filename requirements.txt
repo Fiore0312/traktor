@@ -1,0 +1,58 @@
+# DJ Fiore Autonomous DJ System - Python Dependencies
+# Windows and macOS compatible
+
+# Core MIDI support (Windows: use mido+pygame, macOS: python-rtmidi)
+mido>=1.3.0
+pygame>=2.6.0; sys_platform == 'win32'  # Windows MIDI backend
+python-rtmidi>=1.5.8; sys_platform == 'darwin'  # macOS only
+
+# Audio analysis and processing
+librosa>=0.10.1
+numpy>=1.24.0
+soundfile>=0.12.1
+
+# File and process management
+filelock>=3.13.1
+pathlib>=1.0.1
+
+# Computer vision (optional for screen capture analysis)
+Pillow>=10.0.0
+
+# Testing framework
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Data validation and parsing
+pydantic>=2.0.0
+
+# XML parsing (for Traktor collection.nml)
+lxml>=4.9.0
+
+# Logging and monitoring
+colorlog>=6.7.0
+
+# Utilities
+python-dateutil>=2.8.2
+
+# Phase 2: LLM Integration (OpenRouter + LangChain)
+langchain>=0.1.0
+langchain-openai>=0.0.5
+chromadb>=0.4.0  # Vector database for persistent memory
+
+# Phase 3: datapizza-ai framework (Italian GenAI framework)
+datapizza-ai==0.0.2
+datapizza-ai-clients-openai==0.0.3
+datapizza-ai-core==0.0.4
+datapizza-ai-embedders-openai==0.0.3
+datapizza-ai-tools-duckduckgo==0.0.3
+datapizza-ai-vectorstores-qdrant==0.0.2
+
+# Observability and Tracing
+opentelemetry-api==1.38.0
+opentelemetry-exporter-otlp==1.38.0
+opentelemetry-exporter-otlp-proto-common==1.38.0
+opentelemetry-exporter-otlp-proto-grpc==1.38.0
+opentelemetry-exporter-otlp-proto-http==1.38.0
+opentelemetry-proto==1.38.0
+opentelemetry-sdk==1.38.0
+opentelemetry-semantic-conventions==0.59b0

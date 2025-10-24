@@ -1,0 +1,157 @@
+{
+  "version": "1.0",
+  "source": "Traktor Pro 3 Official Shortcuts (defkey.com/traktor-pro-3-shortcuts)",
+  "last_updated": "2025-10-22",
+  "description": "Complete mapping of Traktor Pro 3 keyboard shortcuts for autonomous DJ control",
+
+  "deck_control": {
+    "play_pause_common": {
+      "keys": ["W", "S"],
+      "description": "Play/Pause any deck",
+      "note": "Works on currently focused deck or common mode"
+    },
+    "deck_a": {
+      "cue": {"key": "Q", "hold": true},
+      "sync_on": {"key": "U"},
+      "set_tempo_master": {"key": "Shift+U"},
+      "beat_tap": {"key": "I"},
+      "copy_phase_from_master": {"key": "Shift+I"},
+      "keylock_toggle": {"key": "Shift+Y"}
+    },
+    "deck_b": {
+      "cue": {"key": "A", "hold": true},
+      "sync_on": {"key": "J"},
+      "set_tempo_master": {"key": "Shift+J"},
+      "beat_tap": {"key": "K"},
+      "copy_phase_from_master": {"key": "Shift+K"},
+      "keylock_toggle": {"key": "Shift+H"}
+    }
+  },
+
+  "browser": {
+    "navigation": {
+      "scroll_list_up": {"key": "Up"},
+      "scroll_list_down": {"key": "Down"},
+      "tree_collapse_or_left": {"key": "Left"},
+      "tree_expand_or_right": {"key": "Right"},
+      "search": {"key": "Ctrl+F"},
+      "select_all": {"key": "Ctrl+A"}
+    },
+    "loading": {
+      "load_to_deck_a": {"keys": ["Shift+Left", "Ctrl+Left"]},
+      "load_to_deck_b": {"keys": ["Shift+Right", "Ctrl+Right"]},
+      "duplicate_deck_b_to_a": {"key": "Ctrl+Shift+Left"},
+      "duplicate_deck_a_to_b": {"key": "Ctrl+Shift+Right"}
+    }
+  },
+
+  "hotcues": {
+    "deck_a": {
+      "trigger": {
+        "hotcue_1": {"key": "1"},
+        "hotcue_2": {"key": "2"},
+        "hotcue_3": {"key": "3"},
+        "hotcue_4": {"key": "4"},
+        "hotcue_5": {"key": "5"}
+      },
+      "delete": {
+        "hotcue_1": {"key": "Ctrl+1"},
+        "hotcue_2": {"key": "Ctrl+2"},
+        "hotcue_3": {"key": "Ctrl+3"},
+        "hotcue_4": {"key": "Ctrl+4"},
+        "hotcue_5": {"key": "Ctrl+5"}
+      }
+    },
+    "deck_b": {
+      "trigger": {
+        "hotcue_1": {"key": "6"},
+        "hotcue_2": {"key": "7"},
+        "hotcue_3": {"key": "8"},
+        "hotcue_4": {"key": "9"},
+        "hotcue_5": {"key": "0"}
+      },
+      "delete": {
+        "hotcue_1": {"key": "Ctrl+6"},
+        "hotcue_2": {"key": "Ctrl+7"},
+        "hotcue_3": {"key": "Ctrl+8"},
+        "hotcue_4": {"key": "Ctrl+9"},
+        "hotcue_5": {"key": "Ctrl+0"}
+      }
+    }
+  },
+
+  "loops": {
+    "deck_a": {
+      "loop_in": {"key": "O"},
+      "loop_out": {"key": "P"},
+      "loop_active_toggle": {"key": "Shift+["},
+      "loop_size_increase": {"key": "Shift+P"},
+      "loop_size_decrease": {"key": "Shift+O"},
+      "loop_size_select": {"key": "["}
+    },
+    "deck_b": {
+      "loop_in": {"key": "L"},
+      "loop_out": {"key": ";"},
+      "loop_active_toggle": {"key": "Shift+'"},
+      "loop_size_increase": {"key": "Shift+;"},
+      "loop_size_decrease": {"key": "Shift+L"},
+      "loop_size_select": {"key": "'"}
+    }
+  },
+
+  "tempo": {
+    "deck_a": {
+      "tempo_bend_up": {"key": "Y", "hold": true},
+      "tempo_bend_down": {"key": "T", "hold": true},
+      "beatjump_forward": {"key": "R", "hold": true},
+      "beatjump_backward": {"key": "E", "hold": true}
+    },
+    "deck_b": {
+      "tempo_bend_up": {"key": "H", "hold": true},
+      "tempo_bend_down": {"key": "G", "hold": true},
+      "beatjump_forward": {"key": "F", "hold": true},
+      "beatjump_backward": {"key": "D", "hold": true}
+    }
+  },
+
+  "waveform": {
+    "deck_a": {
+      "zoom_adjust": {"keys": [".", "/", "Shift+."]}
+    },
+    "deck_b": {
+      "zoom_adjust": {"keys": ["/", "Shift+.", "Shift+/"]}
+    }
+  },
+
+  "global": {
+    "layout_selector": {"keys": ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"]},
+    "browser_only": {"key": "Space"},
+    "undo_redo": {"key": "Backspace"},
+    "reset_downbeat": {"key": "Alt+Ctrl+Space"}
+  },
+
+  "notes": {
+    "mixer_control": "Mixer controls (volume, EQ, crossfader) are NOT available via keyboard shortcuts - MIDI only",
+    "fx_control": "FX controls are NOT available via keyboard shortcuts - MIDI only",
+    "visual_feedback": "No visual feedback available - must rely on Traktor UI or audio monitoring",
+    "timing": "Keyboard shortcuts are instant (no latency like MIDI)",
+    "windows_focus": "Traktor window must be focused for shortcuts to work"
+  },
+
+  "limitations": {
+    "no_mixer": [
+      "Volume faders (Deck A, Deck B, Master)",
+      "Crossfader position",
+      "EQ controls (High, Mid, Low)",
+      "Filter controls",
+      "Gain controls"
+    ],
+    "no_fx": [
+      "FX unit selection",
+      "FX parameter control",
+      "FX on/off toggles",
+      "FX dry/wet mix"
+    ],
+    "workaround": "For mixer/FX control, must continue using MIDI driver or implement hybrid approach"
+  }
+}

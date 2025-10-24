@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "source": "traktor-pro-3-shortcuts.pdf",
+    "source_url": "https://defkey.com/traktor-pro-3-shortcuts",
+    "total_shortcuts": 138,
+    "mapped_shortcuts": 0,
+    "last_update": null,
+    "created_at": "2025-10-22T19:00:00Z",
+    "description": "Complete keyboard shortcuts mapping for Traktor Pro 3 - ALL commands from official cheat sheet"
+  },
+  "categories": {
+    "global": {
+      "name": "Global Commands",
+      "description": "Browser, layout, and global navigation",
+      "shortcuts": [
+        {"id": "g001", "key": "F1", "modifiers": [], "action": "Layout Selector F1", "description": "Select layout F1", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g002", "key": "F2", "modifiers": [], "action": "Layout Selector F2", "description": "Select layout F2", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g003", "key": "F3", "modifiers": [], "action": "Layout Selector F3", "description": "Select layout F3", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g004", "key": "F4", "modifiers": [], "action": "Layout Selector F4", "description": "Select layout F4", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g005", "key": "F5", "modifiers": [], "action": "Layout Selector F5", "description": "Select layout F5", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g006", "key": "F6", "modifiers": [], "action": "Layout Selector F6", "description": "Select layout F6", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g007", "key": "F7", "modifiers": [], "action": "Layout Selector F7", "description": "Select layout F7", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g008", "key": "F8", "modifiers": [], "action": "Layout Selector F8", "description": "Select layout F8", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g009", "key": "F9", "modifiers": [], "action": "Layout Selector F9", "description": "Select layout F9", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g010", "key": "F10", "modifiers": [], "action": "Layout Selector F10", "description": "Select layout F10", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g011", "key": "F11", "modifiers": [], "action": "Layout Selector F11", "description": "Select layout F11", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g012", "key": "F12", "modifiers": [], "action": "Layout Selector F12", "description": "Select layout F12", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g013", "key": "F1", "modifiers": ["shift"], "action": "Add Folder to Music Folders", "description": "Add folder to music folders using F1", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g014", "key": "F2", "modifiers": ["shift"], "action": "Add Folder to Music Folders", "description": "Add folder to music folders using F2", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g015", "key": "F3", "modifiers": ["shift"], "action": "Add Folder to Music Folders", "description": "Add folder to music folders using F3", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g016", "key": "F4", "modifiers": ["shift"], "action": "Add Folder to Music Folders", "description": "Add folder to music folders using F4", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g017", "key": "F5", "modifiers": ["shift"], "action": "Add Folder to Music Folders", "description": "Add folder to music folders using F5", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g018", "key": "F6", "modifiers": ["shift"], "action": "Add Folder to Music Folders", "description": "Add folder to music folders using F6", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g019", "key": "F7", "modifiers": ["shift"], "action": "Add Folder to Music Folders", "description": "Add folder to music folders using F7", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g020", "key": "F8", "modifiers": ["shift"], "action": "Add Folder to Music Folders", "description": "Add folder to music folders using F8", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g021", "key": "F9", "modifiers": ["shift"], "action": "Add Folder to Music Folders", "description": "Add folder to music folders using F9", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g022", "key": "F10", "modifiers": ["shift"], "action": "Add Folder to Music Folders", "description": "Add folder to music folders using F10", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g023", "key": "F11", "modifiers": ["shift"], "action": "Add Folder to Music Folders", "description": "Add folder to music folders using F11", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g024", "key": "F12", "modifiers": ["shift"], "action": "Add Folder to Music Folders", "description": "Add folder to music folders using F12", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g025", "key": "/", "modifiers": ["ctrl"], "action": "Layout Selector Decrease", "description": "Navigate to previous layout", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g026", "key": "/", "modifiers": ["ctrl"], "action": "Layout Selector Increase", "description": "Navigate to next layout", "critical_for_dj_ai": false, "mapped": false, "note": "Same key as decrease, context-dependent"},
+        {"id": "g027", "key": "left", "modifiers": [], "action": "Browser Tree Navigate Up", "description": "Select up in browser folder tree", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "g028", "key": "right", "modifiers": [], "action": "Browser Tree Navigate Down", "description": "Select down in browser folder tree", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "g029", "key": "left", "modifiers": [], "action": "Browser Tree Collapse", "description": "Collapse selected folder", "critical_for_dj_ai": true, "mapped": false, "note": "Same as g027, context-dependent"},
+        {"id": "g030", "key": "right", "modifiers": [], "action": "Browser Tree Expand", "description": "Expand selected folder", "critical_for_dj_ai": true, "mapped": false, "note": "Same as g028, context-dependent"},
+        {"id": "g031", "key": "up", "modifiers": [], "action": "Browser List Up", "description": "Navigate up in track list", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "g032", "key": "down", "modifiers": [], "action": "Browser List Down", "description": "Navigate down in track list", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "g033", "key": "backspace", "modifiers": [], "action": "Undo/Redo", "description": "Undo or redo last action", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g034", "key": "space", "modifiers": [], "action": "Toggle Browser Fullscreen", "description": "Show only browser panel", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g035", "key": "a", "modifiers": ["ctrl"], "action": "Select All", "description": "Select all tracks in browser", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "g036", "key": "f", "modifiers": ["ctrl"], "action": "Search", "description": "Open search field", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "g037", "key": "space", "modifiers": ["alt", "ctrl"], "action": "Reset Downbeat", "description": "Reset track downbeat grid", "critical_for_dj_ai": false, "mapped": false}
+      ]
+    },
+    "deck_a_hotcues": {
+      "name": "Deck A - Hotcues",
+      "description": "Hotcue management for Deck A",
+      "shortcuts": [
+        {"id": "da_hc01", "key": "1", "modifiers": [], "action": "Hotcue 1 Select/Store", "description": "Select, set or store hotcue 1 (hold)", "critical_for_dj_ai": true, "mapped": false, "requires_hold": true},
+        {"id": "da_hc02", "key": "2", "modifiers": [], "action": "Hotcue 2 Select/Store", "description": "Select, set or store hotcue 2 (hold)", "critical_for_dj_ai": true, "mapped": false, "requires_hold": true},
+        {"id": "da_hc03", "key": "3", "modifiers": [], "action": "Hotcue 3 Select/Store", "description": "Select, set or store hotcue 3 (hold)", "critical_for_dj_ai": true, "mapped": false, "requires_hold": true},
+        {"id": "da_hc04", "key": "4", "modifiers": [], "action": "Hotcue 4 Select/Store", "description": "Select, set or store hotcue 4 (hold)", "critical_for_dj_ai": true, "mapped": false, "requires_hold": true},
+        {"id": "da_hc05", "key": "5", "modifiers": [], "action": "Hotcue 5 Select/Store", "description": "Select, set or store hotcue 5 (hold)", "critical_for_dj_ai": true, "mapped": false, "requires_hold": true},
+        {"id": "da_hc06", "key": "1", "modifiers": ["ctrl"], "action": "Delete Hotcue 1", "description": "Delete hotcue 1", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_hc07", "key": "2", "modifiers": ["ctrl"], "action": "Delete Hotcue 2", "description": "Delete hotcue 2", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_hc08", "key": "3", "modifiers": ["ctrl"], "action": "Delete Hotcue 3", "description": "Delete hotcue 3", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_hc09", "key": "4", "modifiers": ["ctrl"], "action": "Delete Hotcue 4", "description": "Delete hotcue 4", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_hc10", "key": "5", "modifiers": ["ctrl"], "action": "Delete Hotcue 5", "description": "Delete hotcue 5", "critical_for_dj_ai": false, "mapped": false}
+      ]
+    },
+    "deck_b_hotcues": {
+      "name": "Deck B - Hotcues",
+      "description": "Hotcue management for Deck B",
+      "shortcuts": [
+        {"id": "db_hc01", "key": "6", "modifiers": [], "action": "Hotcue 1 Select/Store", "description": "Select, set or store hotcue 1 (hold)", "critical_for_dj_ai": true, "mapped": false, "requires_hold": true},
+        {"id": "db_hc02", "key": "7", "modifiers": [], "action": "Hotcue 2 Select/Store", "description": "Select, set or store hotcue 2 (hold)", "critical_for_dj_ai": true, "mapped": false, "requires_hold": true},
+        {"id": "db_hc03", "key": "8", "modifiers": [], "action": "Hotcue 3 Select/Store", "description": "Select, set or store hotcue 3 (hold)", "critical_for_dj_ai": true, "mapped": false, "requires_hold": true},
+        {"id": "db_hc04", "key": "9", "modifiers": [], "action": "Hotcue 4 Select/Store", "description": "Select, set or store hotcue 4 (hold)", "critical_for_dj_ai": true, "mapped": false, "requires_hold": true},
+        {"id": "db_hc05", "key": "0", "modifiers": [], "action": "Hotcue 5 Select/Store", "description": "Select, set or store hotcue 5 (hold)", "critical_for_dj_ai": true, "mapped": false, "requires_hold": true},
+        {"id": "db_hc06", "key": "6", "modifiers": ["ctrl"], "action": "Delete Hotcue 1", "description": "Delete hotcue 1", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_hc07", "key": "7", "modifiers": ["ctrl"], "action": "Delete Hotcue 2", "description": "Delete hotcue 2", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_hc08", "key": "8", "modifiers": ["ctrl"], "action": "Delete Hotcue 3", "description": "Delete hotcue 3", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_hc09", "key": "9", "modifiers": ["ctrl"], "action": "Delete Hotcue 4", "description": "Delete hotcue 4", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_hc10", "key": "0", "modifiers": ["ctrl"], "action": "Delete Hotcue 5", "description": "Delete hotcue 5", "critical_for_dj_ai": false, "mapped": false}
+      ]
+    },
+    "deck_a_transport": {
+      "name": "Deck A - Transport & Playback",
+      "description": "Playback control for Deck A",
+      "shortcuts": [
+        {"id": "da_tr01", "key": "q", "modifiers": [], "action": "Cue", "description": "Cue button (hold to preview)", "critical_for_dj_ai": true, "mapped": false, "requires_hold": true},
+        {"id": "da_tr02", "key": "w", "modifiers": [], "action": "Play/Pause", "description": "Toggle play/pause (deck common)", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "da_tr03", "key": "s", "modifiers": [], "action": "Play/Pause Alt", "description": "Alternative play/pause key", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "da_tr04", "key": "e", "modifiers": [], "action": "Beatjump Backward", "description": "Beat jump backward (hold)", "critical_for_dj_ai": false, "mapped": false, "requires_hold": true},
+        {"id": "da_tr05", "key": "r", "modifiers": [], "action": "Beatjump Forward", "description": "Beat jump forward (hold)", "critical_for_dj_ai": false, "mapped": false, "requires_hold": true},
+        {"id": "da_tr06", "key": "u", "modifiers": [], "action": "Sync On", "description": "Enable SYNC for tempo matching", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "da_tr07", "key": "i", "modifiers": [], "action": "Beat Tap", "description": "Tap to detect BPM manually", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_tr08", "key": "t", "modifiers": [], "action": "Tempo Bend Down", "description": "Temporary tempo decrease (nudge)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_tr09", "key": "y", "modifiers": [], "action": "Tempo Bend Up", "description": "Temporary tempo increase (nudge)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_tr10", "key": "u", "modifiers": ["shift"], "action": "Set Tempo Master", "description": "Set this deck as tempo master", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "da_tr11", "key": "i", "modifiers": ["shift"], "action": "Copy Phase from Master", "description": "Sync phase with tempo master", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_tr12", "key": "y", "modifiers": ["shift"], "action": "Keylock Toggle", "description": "Toggle keylock (pitch lock)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_tr13", "key": "q", "modifiers": ["shift"], "action": "Playback Mode Int/Rel/Abs/Hap", "description": "Cycle playback mode", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_tr14", "key": "w", "modifiers": ["shift"], "action": "Playback Mode Int/Rel/Abs/Hap", "description": "Cycle playback mode (alt)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_tr15", "key": "e", "modifiers": ["shift"], "action": "Beatjump", "description": "Beat jump (modified)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_tr16", "key": "r", "modifiers": ["shift"], "action": "Beatjump", "description": "Beat jump (modified alt)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_tr17", "key": "t", "modifiers": ["shift"], "action": "Seek Position", "description": "Seek to position (deck common)", "critical_for_dj_ai": false, "mapped": false}
+      ]
+    },
+    "deck_b_transport": {
+      "name": "Deck B - Transport & Playback",
+      "description": "Playback control for Deck B",
+      "shortcuts": [
+        {"id": "db_tr01", "key": "a", "modifiers": [], "action": "Cue", "description": "Cue button (hold to preview)", "critical_for_dj_ai": true, "mapped": false, "requires_hold": true},
+        {"id": "db_tr02", "key": "d", "modifiers": [], "action": "Beatjump Backward", "description": "Beat jump backward (hold)", "critical_for_dj_ai": false, "mapped": false, "requires_hold": true},
+        {"id": "db_tr03", "key": "f", "modifiers": [], "action": "Beatjump Forward", "description": "Beat jump forward (hold)", "critical_for_dj_ai": false, "mapped": false, "requires_hold": true},
+        {"id": "db_tr04", "key": "j", "modifiers": [], "action": "Sync On", "description": "Enable SYNC for tempo matching", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "db_tr05", "key": "k", "modifiers": [], "action": "Beat Tap", "description": "Tap to detect BPM manually", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_tr06", "key": "g", "modifiers": [], "action": "Tempo Bend Down", "description": "Temporary tempo decrease (nudge)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_tr07", "key": "h", "modifiers": [], "action": "Tempo Bend Up", "description": "Temporary tempo increase (nudge)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_tr08", "key": "j", "modifiers": ["shift"], "action": "Set Tempo Master", "description": "Set this deck as tempo master", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "db_tr09", "key": "k", "modifiers": ["shift"], "action": "Copy Phase from Master", "description": "Sync phase with tempo master", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_tr10", "key": "h", "modifiers": ["shift"], "action": "Keylock Toggle", "description": "Toggle keylock (pitch lock)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_tr11", "key": "a", "modifiers": ["shift"], "action": "Playback Mode Int/Rel/Abs/Hap", "description": "Cycle playback mode", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_tr12", "key": "s", "modifiers": ["shift"], "action": "Playback Mode Int/Rel/Abs/Hap", "description": "Cycle playback mode (alt)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_tr13", "key": "d", "modifiers": ["shift"], "action": "Beatjump", "description": "Beat jump (modified)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_tr14", "key": "f", "modifiers": ["shift"], "action": "Beatjump", "description": "Beat jump (modified alt)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_tr15", "key": "g", "modifiers": ["shift"], "action": "Seek Position", "description": "Seek to position (deck common)", "critical_for_dj_ai": false, "mapped": false}
+      ]
+    },
+    "deck_a_loops": {
+      "name": "Deck A - Loops",
+      "description": "Loop control for Deck A",
+      "shortcuts": [
+        {"id": "da_lp01", "key": "o", "modifiers": [], "action": "Loop In / Set Cue", "description": "Set loop in point or cue point", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "da_lp02", "key": "p", "modifiers": [], "action": "Loop Out", "description": "Set loop out point", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "da_lp03", "key": "[", "modifiers": [], "action": "Loop Size Select", "description": "Select loop size", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_lp04", "key": "1", "modifiers": ["shift"], "action": "Loop Size Select + Set", "description": "Set loop size option 1", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_lp05", "key": "2", "modifiers": ["shift"], "action": "Loop Size Select + Set", "description": "Set loop size option 2", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_lp06", "key": "3", "modifiers": ["shift"], "action": "Loop Size Select + Set", "description": "Set loop size option 3", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_lp07", "key": "4", "modifiers": ["shift"], "action": "Loop Size Select + Set", "description": "Set loop size option 4", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_lp08", "key": "5", "modifiers": ["shift"], "action": "Loop Size Select + Set", "description": "Set loop size option 5", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_lp09", "key": "o", "modifiers": ["shift"], "action": "Loop Size Decrease", "description": "Decrease loop size", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_lp10", "key": "p", "modifiers": ["shift"], "action": "Loop Size Increase", "description": "Increase loop size", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "da_lp11", "key": "[", "modifiers": ["shift"], "action": "Loop Active Toggle", "description": "Activate/deactivate loop", "critical_for_dj_ai": true, "mapped": false}
+      ]
+    },
+    "deck_b_loops": {
+      "name": "Deck B - Loops",
+      "description": "Loop control for Deck B",
+      "shortcuts": [
+        {"id": "db_lp01", "key": "l", "modifiers": [], "action": "Loop In / Set Cue", "description": "Set loop in point or cue point", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "db_lp02", "key": ";", "modifiers": [], "action": "Loop Out", "description": "Set loop out point", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "db_lp03", "key": "'", "modifiers": [], "action": "Loop Size Select", "description": "Select loop size", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_lp04", "key": "6", "modifiers": ["shift"], "action": "Loop Size Select + Set", "description": "Set loop size option 1", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_lp05", "key": "7", "modifiers": ["shift"], "action": "Loop Size Select + Set", "description": "Set loop size option 2", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_lp06", "key": "8", "modifiers": ["shift"], "action": "Loop Size Select + Set", "description": "Set loop size option 3", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_lp07", "key": "9", "modifiers": ["shift"], "action": "Loop Size Select + Set", "description": "Set loop size option 4", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_lp08", "key": "0", "modifiers": ["shift"], "action": "Loop Size Select + Set", "description": "Set loop size option 5", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_lp09", "key": "l", "modifiers": ["shift"], "action": "Loop Size Decrease", "description": "Decrease loop size", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_lp10", "key": ";", "modifiers": ["shift"], "action": "Loop Size Increase", "description": "Increase loop size", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "db_lp11", "key": "'", "modifiers": ["shift"], "action": "Loop Active Toggle", "description": "Activate/deactivate loop", "critical_for_dj_ai": true, "mapped": false}
+      ]
+    },
+    "common_load": {
+      "name": "Track Loading",
+      "description": "Load tracks to decks",
+      "shortcuts": [
+        {"id": "ld01", "key": "left", "modifiers": ["shift"], "action": "Load Track to Deck A", "description": "Load selected track to Deck A", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "ld02", "key": "left", "modifiers": ["ctrl"], "action": "Load Track to Deck A Alt", "description": "Alternative load to Deck A", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "ld03", "key": "right", "modifiers": ["shift"], "action": "Load Track to Deck B", "description": "Load selected track to Deck B", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "ld04", "key": "right", "modifiers": ["ctrl"], "action": "Load Track to Deck B Alt", "description": "Alternative load to Deck B", "critical_for_dj_ai": true, "mapped": false},
+        {"id": "ld05", "key": "left", "modifiers": ["ctrl", "shift"], "action": "Duplicate Track B to A", "description": "Duplicate track from Deck B to Deck A", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "ld06", "key": "right", "modifiers": ["ctrl", "shift"], "action": "Duplicate Track A to B", "description": "Duplicate track from Deck A to Deck B", "critical_for_dj_ai": false, "mapped": false}
+      ]
+    },
+    "waveform": {
+      "name": "Waveform Display",
+      "description": "Waveform zoom controls",
+      "shortcuts": [
+        {"id": "wf01", "key": ".", "modifiers": [], "action": "Waveform Zoom Deck A", "description": "Adjust waveform zoom for Deck A", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "wf02", "key": "/", "modifiers": [], "action": "Waveform Zoom Deck B", "description": "Adjust waveform zoom for Deck B", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "wf03", "key": ".", "modifiers": ["shift"], "action": "Waveform Zoom Deck A/B", "description": "Adjust waveform zoom (combo)", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "wf04", "key": "/", "modifiers": ["shift"], "action": "Waveform Zoom Deck A", "description": "Adjust waveform zoom (alt)", "critical_for_dj_ai": false, "mapped": false}
+      ]
+    },
+    "remix_deck": {
+      "name": "Remix Deck",
+      "description": "Remix Deck slot controls",
+      "shortcuts": [
+        {"id": "rm01", "key": "z", "modifiers": [], "action": "Slot Capture/Trigger/Mute", "description": "Control remix slot Z", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm02", "key": "x", "modifiers": [], "action": "Slot Capture/Trigger/Mute", "description": "Control remix slot X", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm03", "key": "c", "modifiers": [], "action": "Slot Capture/Trigger/Mute", "description": "Control remix slot C", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm04", "key": "v", "modifiers": [], "action": "Slot Capture/Trigger/Mute", "description": "Control remix slot V", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm05", "key": "b", "modifiers": [], "action": "Slot Capture/Trigger/Mute", "description": "Control remix slot B", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm06", "key": "n", "modifiers": [], "action": "Slot Capture/Trigger/Mute", "description": "Control remix slot N", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm07", "key": "m", "modifiers": [], "action": "Slot Capture/Trigger/Mute", "description": "Control remix slot M", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm08", "key": ",", "modifiers": [], "action": "Slot Capture/Trigger/Mute", "description": "Control remix slot comma", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm09", "key": "z", "modifiers": ["shift"], "action": "Slot Retrigger Play", "description": "Retrigger remix slot Z", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm10", "key": "x", "modifiers": ["shift"], "action": "Slot Retrigger Play", "description": "Retrigger remix slot X", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm11", "key": "c", "modifiers": ["shift"], "action": "Slot Retrigger Play", "description": "Retrigger remix slot C", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm12", "key": "v", "modifiers": ["shift"], "action": "Slot Retrigger Play", "description": "Retrigger remix slot V", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm13", "key": "b", "modifiers": ["shift"], "action": "Slot Retrigger Play", "description": "Retrigger remix slot B", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm14", "key": "n", "modifiers": ["shift"], "action": "Slot Retrigger Play", "description": "Retrigger remix slot N", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm15", "key": "m", "modifiers": ["shift"], "action": "Slot Retrigger Play", "description": "Retrigger remix slot M", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm16", "key": ",", "modifiers": ["shift"], "action": "Slot Retrigger Play", "description": "Retrigger remix slot comma", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm17", "key": "z", "modifiers": ["ctrl"], "action": "Slot Stop/Delete/Load", "description": "Stop/delete/load remix slot Z", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm18", "key": "x", "modifiers": ["ctrl"], "action": "Slot Stop/Delete/Load", "description": "Stop/delete/load remix slot X", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm19", "key": "c", "modifiers": ["ctrl"], "action": "Slot Stop/Delete/Load", "description": "Stop/delete/load remix slot C", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm20", "key": "v", "modifiers": ["ctrl"], "action": "Slot Stop/Delete/Load", "description": "Stop/delete/load remix slot V", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm21", "key": "b", "modifiers": ["ctrl"], "action": "Slot Stop/Delete/Load", "description": "Stop/delete/load remix slot B", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm22", "key": "n", "modifiers": ["ctrl"], "action": "Slot Stop/Delete/Load", "description": "Stop/delete/load remix slot N", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm23", "key": "m", "modifiers": ["ctrl"], "action": "Slot Stop/Delete/Load", "description": "Stop/delete/load remix slot M", "critical_for_dj_ai": false, "mapped": false},
+        {"id": "rm24", "key": ",", "modifiers": ["ctrl"], "action": "Slot Stop/Delete/Load", "description": "Stop/delete/load remix slot comma", "critical_for_dj_ai": false, "mapped": false}
+      ]
+    }
+  },
+  "statistics": {
+    "total_by_category": {
+      "global": 37,
+      "deck_a_hotcues": 10,
+      "deck_b_hotcues": 10,
+      "deck_a_transport": 17,
+      "deck_b_transport": 15,
+      "deck_a_loops": 11,
+      "deck_b_loops": 11,
+      "common_load": 6,
+      "waveform": 4,
+      "remix_deck": 24
+    },
+    "critical_for_dj_ai": 38,
+    "requires_hold": 12
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-10-21",
+  "description": "Persistent system state and discovered behaviors",
+
+  "verified_hardware": {
+    "midi_interface": "loopMIDI",
+    "midi_port": "Traktor MIDI Bus 1",
+    "audio_driver": "ASIO4ALL",
+    "audio_driver_required": true,
+    "wasapi_blocks_midi": true
+  },
+
+  "discovered_behaviors": {
+    "browser_navigation": {
+      "cc_72_movement": "2_folders_down",
+      "cc_73_movement": "2_folders_up",
+      "workaround": "Use UP+DOWN combinations to reach odd positions",
+      "delay_required_ms": 2000,
+      "verified_date": "2025-10-21"
+    },
+    "tempo_master": {
+      "cc_33_issue": "May control pitch instead of MASTER",
+      "status": "needs_investigation",
+      "workaround": "Skip CC 33 for now, use AUTO mode in Traktor",
+      "verified_date": "2025-10-21"
+    },
+    "volume_control": {
+      "cc_65_deck_a": "Works correctly",
+      "value_for_85_percent": 108,
+      "verified_date": "2025-10-21"
+    }
+  },
+
+  "known_issues": {
+    "issue_1": {
+      "title": "Browser navigation moves 2x",
+      "cc_affected": [72, 73],
+      "impact": "Cannot navigate to odd-numbered positions directly",
+      "solution": "Implemented in navigate_to_dub_visual.py with compensation logic",
+      "status": "workaround_implemented"
+    },
+    "issue_2": {
+      "title": "CC 33 controls pitch instead of MASTER",
+      "cc_affected": [33],
+      "impact": "Cannot set MASTER mode via MIDI",
+      "solution": "Use Traktor AUTO mode, skip CC 33",
+      "status": "workaround_active"
+    },
+    "issue_3": {
+      "title": "WASAPI blocks MIDI",
+      "component": "audio_driver",
+      "impact": "No MIDI commands work with WASAPI",
+      "solution": "Switch to ASIO4ALL in Traktor audio settings",
+      "status": "documented"
+    }
+  },
+
+  "session_checklist": {
+    "before_starting": [
+      "Verify loopMIDI is running (tasklist | findstr loopMIDI)",
+      "Verify Traktor is running",
+      "Verify audio driver is ASIO (not WASAPI)",
+      "Verify controller mapping is ENABLED in Traktor",
+      "Read config/traktor_midi_mapping.json for CC values",
+      "Read config/system_state.json for known issues"
+    ]
+  }
+}

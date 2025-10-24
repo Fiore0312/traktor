@@ -1,0 +1,23 @@
+{
+  "session_started": null,
+  "last_update": "2025-10-22T19:20:36.661865",
+  "total_mapped": 13,
+  "current_category": null,
+  "current_index": 0,
+  "mapped_shortcuts": [
+    "g001",
+    "g002",
+    "g003",
+    "g004",
+    "g005",
+    "g006",
+    "g007",
+    "g008",
+    "g009",
+    "g010",
+    "g011",
+    "g012",
+    "g013"
+  ],
+  "notes": "This file tracks your keyboard mapping progress. It's created automatically when you run traktor_keyboard_mapper.py"
+}

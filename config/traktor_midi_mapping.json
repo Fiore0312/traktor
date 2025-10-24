@@ -1,0 +1,147 @@
+{
+  "config_version": "1.0",
+  "last_verified": "2025-10-21",
+  "verified_from": "command_mapping_ok.tsi screenshots",
+  "description": "DEFINITIVE MIDI CC mappings extracted from Traktor Controller Manager screenshots. DO NOT MODIFY without re-verifying in Traktor.",
+
+  "critical_notes": {
+    "browser_navigation": "CC 72/73 move 2 folders at a time, not 1. Use compensation logic.",
+    "pitch_control_issue": "CC 33 may control pitch instead of MASTER on some systems. Test before using.",
+    "asio_requirement": "WASAPI blocks MIDI - ASIO4ALL required for MIDI to work"
+  },
+
+  "deck_a": {
+    "play_pause": 47,
+    "load_track": 43,
+    "cue": 80,
+    "sync_on": 69,
+    "tempo_master": 33,
+    "tempo_adjust": 41,
+    "volume": 65,
+    "eq_high": 34,
+    "eq_mid": 35,
+    "eq_low": 36,
+    "loop_active": 123,
+    "loop_out": 122,
+    "loop_in_set_cue": 121,
+    "map_hotcue": [1, 5, 6, 7, 8]
+  },
+
+  "deck_b": {
+    "play_pause": 48,
+    "load_track": 44,
+    "cue": 81,
+    "sync_on": 42,
+    "tempo_master": 37,
+    "tempo_adjust": 40,
+    "volume": 60,
+    "eq_high": 50,
+    "eq_mid": 51,
+    "eq_low": 52,
+    "loop_active": 126,
+    "loop_out": 125,
+    "loop_in_set_cue": 124,
+    "map_hotcue": [9, 10, 11, 12, 13, 14, 15, 16]
+  },
+
+  "deck_c": {
+    "play_pause": 90,
+    "load_track": 45,
+    "cue": 82,
+    "sync_on": 59,
+    "tempo_master": 38,
+    "tempo_adjust": 2,
+    "volume": 61,
+    "eq_high": 84,
+    "eq_mid": 85,
+    "eq_low": 86,
+    "loop_active": 55,
+    "loop_out": 54,
+    "loop_in_set_cue": 53,
+    "map_hotcue": [17, 18, 19, 20, 21, 22, 23]
+  },
+
+  "deck_d": {
+    "play_pause": 91,
+    "load_track": 46,
+    "cue": 83,
+    "sync_on": 63,
+    "tempo_master": 39,
+    "tempo_adjust": 3,
+    "volume": 62,
+    "eq_high": 66,
+    "eq_mid": 67,
+    "eq_low": 68,
+    "loop_active": 58,
+    "loop_out": 57,
+    "loop_in_set_cue": null,
+    "map_hotcue": [24, 25, 26, 27, 28, 29, 30]
+  },
+
+  "mixer": {
+    "crossfader": 56,
+    "master_volume": 75,
+    "crossfader_note": "CC 56 verified working, but conflicts with browser tree navigation"
+  },
+
+  "browser": {
+    "scroll_list": 74,
+    "scroll_tree_up": 73,
+    "scroll_tree_down": 72,
+    "expand_collapse": 64,
+    "navigation_behavior": "2x_movement",
+    "navigation_delay_ms": 2000
+  },
+
+  "fx_unit_1": {
+    "unit_on": 96,
+    "button_1": 93,
+    "button_2": 94,
+    "button_3": 95,
+    "knob_1": 77,
+    "knob_2": 78,
+    "knob_3": 79,
+    "dry_wet": 76
+  },
+
+  "fx_unit_2": {
+    "unit_on": 104,
+    "button_1": 101,
+    "button_2": 102,
+    "button_3": 103,
+    "knob_1": 98,
+    "knob_2": 99,
+    "knob_3": 100,
+    "dry_wet": 97
+  },
+
+  "fx_unit_3": {
+    "unit_on": 112,
+    "button_1": 109,
+    "button_2": 110,
+    "button_3": 111,
+    "knob_1": 106,
+    "knob_2": 107,
+    "knob_3": 108,
+    "dry_wet": 105
+  },
+
+  "fx_unit_4": {
+    "unit_on": 120,
+    "button_1": 117,
+    "button_2": 118,
+    "button_3": 119,
+    "knob_1": 114,
+    "knob_2": 115,
+    "knob_3": 116,
+    "dry_wet": 113
+  },
+
+  "midi_settings": {
+    "port_name": "Traktor MIDI Bus 1",
+    "channel_command": 1,
+    "channel_feedback": 2,
+    "loop_midi_required": true,
+    "asio_driver_required": true
+  }
+}
