@@ -629,8 +629,9 @@ Deck B: {state['deck_b'].get('status', 'unknown')}
         # Step 3: Load track on deck
         print(f"[CONTROLLER] Step 3/5: Loading track on Deck {deck}...")
 
-        # Safety check
-        if not self.safety.pre_load_safety_check(deck):
+        # Safety check (opposite_deck_playing=True prevents crossfader movement)
+        # We want crossfader to stay centered, not move to deck side
+        if not self.safety.pre_load_safety_check(deck, opposite_deck_playing=True):
             return {
                 'success': False,
                 'message': f"[ERROR] Safety check failed for Deck {deck}"
