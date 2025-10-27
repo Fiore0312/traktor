@@ -8,7 +8,7 @@ import json
 import base64
 from pathlib import Path
 from typing import Dict, List, Optional
-from config import (
+from autonomous_dj.config import (
     OPENROUTER_API_KEY,
     OPENROUTER_BASE_URL,
     OPENROUTER_SITE_URL,

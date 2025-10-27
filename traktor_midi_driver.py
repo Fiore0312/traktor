@@ -289,6 +289,24 @@ class TraktorMIDIDriver:
             logger.error(f"Failed to send MIDI: {e}")
             return False
 
+    def load_selected_track(self, deck: str) -> bool:
+        """
+        Load the currently selected track in the browser to a specific deck.
+
+        Args:
+            deck: "A" or "B" - target deck
+
+        Returns:
+            True if command sent successfully
+        """
+        if deck.upper() == "A":
+            return self.load_track_deck_a()
+        elif deck.upper() == "B":
+            return self.load_track_deck_b()
+        else:
+            logger.error(f"Invalid deck '{deck}'. Use 'A' or 'B'")
+            return False
+
     def load_track_deck_a(self) -> bool:
         logger.info("Loading track to Deck A...")
         return self.send_cc(TraktorCC.DECK_A_LOAD_TRACK, 127, MIDIChannel.AI_CONTROL)
@@ -306,6 +324,139 @@ class TraktorMIDIDriver:
         value = 127 if enable else 0
         logger.info(f"{'Enabling' if enable else 'Disabling'} Deck A sync")
         return self.send_cc(TraktorCC.DECK_A_SYNC_ON, value, MIDIChannel.AI_CONTROL)
+
+
+    def load_track_deck_b(self) -> bool:
+        logger.info("Loading track to Deck B...")
+        return self.send_cc(TraktorCC.DECK_B_LOAD_TRACK, 127, MIDIChannel.AI_CONTROL)
+
+    def play_deck_b(self, play: bool = True) -> bool:
+        value = 127 if play else 0
+        logger.info(f"{'Playing' if play else 'Pausing'} Deck B...")
+        return self.send_cc(TraktorCC.DECK_B_PLAY_PAUSE, value, MIDIChannel.AI_CONTROL)
+
+    def set_deck_b_volume(self, volume: int) -> bool:
+        logger.info(f"Setting Deck B volume to {volume}")
+        return self.send_cc(TraktorCC.DECK_B_VOLUME, volume, MIDIChannel.AI_CONTROL)
+
+    def sync_deck_b(self, enable: bool = True) -> bool:
+        value = 127 if enable else 0
+        logger.info(f"{'Enabling' if enable else 'Disabling'} Deck B sync")
+        return self.send_cc(TraktorCC.DECK_B_SYNC_ON, value, MIDIChannel.AI_CONTROL)
+
+    # =========== MIXER CONTROLS ===========
+
+    def set_crossfader(self, position: int) -> bool:
+        """
+        Set crossfader position.
+
+        Args:
+            position: 0-127 (0 = full A, 64 = center, 127 = full B)
+
+        Returns:
+            True if successful
+        """
+        if not 0 <= position <= 127:
+            logger.error(f"Invalid crossfader position: {position} (must be 0-127)")
+            return False
+
+        logger.info(f"Setting crossfader to {position} (0=A, 64=center, 127=B)")
+        # CC 56 from traktor_midi_mapping.json
+        return self.send_cc(56, position, MIDIChannel.AI_CONTROL)
+
+    def set_volume(self, deck: str, volume: int) -> bool:
+        """
+        Set volume for specified deck (generic wrapper).
+
+        Args:
+            deck: "A", "B", "C", or "D"
+            volume: 0-127 (0 = silent, 127 = max)
+
+        Returns:
+            True if successful
+        """
+        if not 0 <= volume <= 127:
+            logger.error(f"Invalid volume: {volume} (must be 0-127)")
+            return False
+
+        deck = deck.upper()
+        if deck == "A":
+            return self.set_deck_a_volume(volume)
+        elif deck == "B":
+            return self.set_deck_b_volume(volume)
+        elif deck == "C":
+            logger.info(f"Setting Deck C volume to {volume}")
+            return self.send_cc(TraktorCC.DECK_C_VOLUME, volume, MIDIChannel.AI_CONTROL)
+        elif deck == "D":
+            logger.info(f"Setting Deck D volume to {volume}")
+            return self.send_cc(TraktorCC.DECK_D_VOLUME, volume, MIDIChannel.AI_CONTROL)
+        else:
+            logger.error(f"Invalid deck: {deck} (must be A, B, C, or D)")
+            return False
+
+    def enable_sync(self, deck: str, enable: bool = True) -> bool:
+        """
+        Enable/disable sync for specified deck (generic wrapper).
+
+        Args:
+            deck: "A", "B", "C", or "D"
+            enable: True to enable sync, False to disable
+
+        Returns:
+            True if successful
+        """
+        deck = deck.upper()
+        if deck == "A":
+            return self.sync_deck_a(enable)
+        elif deck == "B":
+            return self.sync_deck_b(enable)
+        elif deck == "C":
+            value = 127 if enable else 0
+            logger.info(f"{'Enabling' if enable else 'Disabling'} Deck C sync")
+            return self.send_cc(TraktorCC.DECK_C_SYNC_ON, value, MIDIChannel.AI_CONTROL)
+        elif deck == "D":
+            value = 127 if enable else 0
+            logger.info(f"{'Enabling' if enable else 'Disabling'} Deck D sync")
+            return self.send_cc(TraktorCC.DECK_D_SYNC_ON, value, MIDIChannel.AI_CONTROL)
+        else:
+            logger.error(f"Invalid deck: {deck} (must be A, B, C, or D)")
+            return False
+
+    def set_master_mode(self, deck: str, enable: bool = True) -> bool:
+        """
+        Set MASTER/TEMPO mode for specified deck.
+
+        IMPORTANT: In Traktor, MASTER mode is set using the "Tempo Master" CC.
+        When enabled (value 127), the deck becomes the MASTER clock.
+        When disabled (value 0), the deck follows other MASTER deck.
+
+        Args:
+            deck: "A", "B", "C", or "D"
+            enable: True to set as MASTER, False to disable MASTER
+
+        Returns:
+            True if successful
+        """
+        deck = deck.upper()
+        value = 127 if enable else 0
+
+        if deck == "A":
+            logger.info(f"{'Enabling' if enable else 'Disabling'} Deck A MASTER mode")
+            return self.send_cc(TraktorCC.DECK_A_TEMPO_MASTER, value, MIDIChannel.AI_CONTROL)
+        elif deck == "B":
+            logger.info(f"{'Enabling' if enable else 'Disabling'} Deck B MASTER mode")
+            return self.send_cc(TraktorCC.DECK_B_TEMPO_MASTER, value, MIDIChannel.AI_CONTROL)
+        elif deck == "C":
+            logger.info(f"{'Enabling' if enable else 'Disabling'} Deck C MASTER mode")
+            return self.send_cc(TraktorCC.DECK_C_TEMPO_MASTER, value, MIDIChannel.AI_CONTROL)
+        elif deck == "D":
+            logger.info(f"{'Enabling' if enable else 'Disabling'} Deck D MASTER mode")
+            return self.send_cc(TraktorCC.DECK_D_TEMPO_MASTER, value, MIDIChannel.AI_CONTROL)
+        else:
+            logger.error(f"Invalid deck: {deck} (must be A, B, C, or D)")
+            return False
+
+    # =========== UTILITY METHODS ===========
 
     def get_available_ports(self) -> List[str]:
         if _USING_MIDO:
@@ -351,8 +502,37 @@ class TraktorMIDIDriver:
     def __del__(self):
         self.close()
 
+    # =========== BROWSER NAVIGATION ===========
+
+    def browser_navigate_up(self) -> bool:
+        """Navigate up in browser tree."""
+        logger.info("Browser: Navigating up in tree")
+        return self.send_cc(TraktorCC.BROWSER_SCROLL_TREE_DEC, 1, MIDIChannel.AI_CONTROL)
+
+    def browser_navigate_down(self) -> bool:
+        """Navigate down in browser tree."""
+        logger.info("Browser: Navigating down in tree")
+        return self.send_cc(TraktorCC.BROWSER_SCROLL_TREE_INC, 1, MIDIChannel.AI_CONTROL)
+
+    def browser_expand_collapse(self) -> bool:
+        """Expand or collapse current tree node."""
+        logger.info("Browser: Expand/collapse tree node")
+        return self.send_cc(TraktorCC.BROWSER_EXPAND_COLLAPSE, 127, MIDIChannel.AI_CONTROL)
+
+    def browser_scroll_tracks(self, direction: int = 1) -> bool:
+        """
+        Scroll through tracks in browser list.
+
+        Args:
+            direction: 1 for down, -1 for up
+        """
+        value = 1 if direction > 0 else 127
+        logger.info(f"Browser: Scrolling tracks {'down' if direction > 0 else 'up'}")
+        return self.send_cc(TraktorCC.BROWSER_SCROLL_LIST, value, MIDIChannel.AI_CONTROL)
+
 
 if __name__ == "__main__":
     with TraktorMIDIDriver() as driver:
         print(f"Connected to: {driver.port_name}")
         driver.load_track_deck_a()
+

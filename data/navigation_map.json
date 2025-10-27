@@ -1,0 +1,389 @@
+{
+  "version": "1.0",
+  "created_at": "2025-10-27T19:43:03.405999",
+  "last_updated": "2025-10-27T21:10:29.247565",
+  "root_folders": [
+    {
+      "name": "Track Collection",
+      "position": 0,
+      "has_children": true,
+      "created_at": "2025-10-27T19:45:24.203694"
+    },
+    {
+      "name": "Artists",
+      "position": 1,
+      "has_children": true,
+      "created_at": "2025-10-27T19:45:40.151469"
+    },
+    {
+      "name": "Releases",
+      "position": 2,
+      "has_children": true,
+      "created_at": "2025-10-27T19:46:04.627460"
+    },
+    {
+      "name": "Labels",
+      "position": 3,
+      "has_children": true,
+      "created_at": "2025-10-27T19:46:15.191440"
+    },
+    {
+      "name": "Genres",
+      "position": 4,
+      "has_children": true,
+      "created_at": "2025-10-27T19:46:29.623713"
+    },
+    {
+      "name": "All Tracks",
+      "position": 5,
+      "has_children": false,
+      "created_at": "2025-10-27T19:46:44.375928"
+    },
+    {
+      "name": "All Stems",
+      "position": 6,
+      "has_children": false,
+      "created_at": "2025-10-27T19:47:57.511222"
+    },
+    {
+      "name": "All Samples",
+      "position": 7,
+      "has_children": false,
+      "created_at": "2025-10-27T19:48:09.259036"
+    },
+    {
+      "name": "All Remix sets",
+      "position": 8,
+      "has_children": true,
+      "created_at": "2025-10-27T19:48:22.840582"
+    },
+    {
+      "name": "Playlists",
+      "position": 9,
+      "has_children": true,
+      "created_at": "2025-10-27T19:48:35.414981"
+    },
+    {
+      "name": "Explorer",
+      "position": 10,
+      "has_children": true,
+      "created_at": "2025-10-27T19:48:48.191950"
+    },
+    {
+      "name": "Audio Recordings",
+      "position": 11,
+      "has_children": false,
+      "created_at": "2025-10-27T19:53:41.582205"
+    },
+    {
+      "name": "iTunes",
+      "position": 12,
+      "has_children": true,
+      "created_at": "2025-10-27T19:53:53.386402"
+    },
+    {
+      "name": "History",
+      "position": 13,
+      "has_children": false,
+      "created_at": "2025-10-27T19:54:08.670039"
+    }
+  ],
+  "music_folders": {
+    "Ableton": {
+      "position": 1,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T19:55:39.918146"
+    },
+    "Acid Jazz": {
+      "position": 2,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T19:55:51.521945"
+    },
+    "Acustico": {
+      "position": 3,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T19:56:02.881688"
+    },
+    "Ambient": {
+      "position": 4,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T19:56:28.073995"
+    },
+    "Breakbeat": {
+      "position": 5,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T19:56:38.773660"
+    },
+    "Broken Beat": {
+      "position": 6,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T19:56:57.745702"
+    },
+    "Casa Bertallot": {
+      "position": 7,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T19:57:07.413842"
+    },
+    "Chill": {
+      "position": 8,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T19:57:14.905804"
+    },
+    "D'n'B": {
+      "position": 9,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T19:58:59.625507"
+    },
+    "Deep House": {
+      "position": 10,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T19:59:07.749204"
+    },
+    "Disco 70": {
+      "position": 11,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T19:59:14.961193"
+    },
+    "Down Beat Lounge": {
+      "position": 12,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T19:59:38.309328"
+    },
+    "Dub": {
+      "position": 13,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 10,
+      "created_at": "2025-10-27T19:59:46.701228"
+    },
+    "Dub Step": {
+      "position": 14,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:00:07.525116"
+    },
+    "Elettro Jazz": {
+      "position": 15,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:00:15.929204"
+    },
+    "Elettrojazz latin": {
+      "position": 16,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:00:25.220970"
+    },
+    "Funk": {
+      "position": 17,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:00:32.337170"
+    },
+    "Future bass": {
+      "position": 18,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:00:40.369423"
+    },
+    "Future bass atmo": {
+      "position": 19,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:00:50.197092"
+    },
+    "Future bass dub": {
+      "position": 20,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:01:08.649321"
+    },
+    "Future funk": {
+      "position": 21,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:01:17.977100"
+    },
+    "Future jungle": {
+      "position": 22,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:01:28.220808"
+    },
+    "GarageBand": {
+      "position": 23,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:01:34.756800"
+    },
+    "Hip hop": {
+      "position": 24,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:01:41.916823"
+    },
+    "House": {
+      "position": 25,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:01:47.592974"
+    },
+    "House jazz": {
+      "position": 26,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:01:54.233612"
+    },
+    "House Lounge": {
+      "position": 27,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:03:49.332798"
+    },
+    "iTunes": {
+      "position": 28,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:03:54.348590"
+    },
+    "Jazz": {
+      "position": 29,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:04:02.112482"
+    },
+    "Jazz Step": {
+      "position": 30,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:04:09.692485"
+    },
+    "Juke": {
+      "position": 31,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:04:16.336624"
+    },
+    "Jungle": {
+      "position": 32,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:04:23.044620"
+    },
+    "Marcel T": {
+      "position": 33,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:04:32.792533"
+    },
+    "MP3 Normalizer": {
+      "position": 34,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:04:42.400681"
+    },
+    "Music": {
+      "position": 35,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:04:49.112276"
+    },
+    "neutri br": {
+      "position": 36,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:04:57.348428"
+    },
+    "Night Music": {
+      "position": 37,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:05:06.612613"
+    },
+    "Nu Disco": {
+      "position": 38,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:05:13.676174"
+    },
+    "Nu Hop": {
+      "position": 39,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:05:21.020469"
+    },
+    "Nu Jazz": {
+      "position": 40,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:05:27.920997"
+    },
+    "Nu Soul": {
+      "position": 41,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:05:33.456390"
+    },
+    "Reggae": {
+      "position": 42,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:05:46.224246"
+    },
+    "Scratch": {
+      "position": 43,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:05:54.812384"
+    },
+    "To MP3 Converter": {
+      "position": 44,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:06:07.104009"
+    },
+    "Traktor": {
+      "position": 45,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:06:22.448216"
+    },
+    "Traktor 2.5 Remix Decks": {
+      "position": 46,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:06:35.979994"
+    },
+    "Trap": {
+      "position": 47,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:06:47.260002"
+    },
+    "Trip": {
+      "position": 48,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:06:53.955987"
+    },
+    "Two Step": {
+      "position": 49,
+      "parent_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music",
+      "approximate_tracks": 0,
+      "created_at": "2025-10-27T20:07:04.520119"
+    }
+  },
+  "navigation_history": [],
+  "training_sessions": []
+}

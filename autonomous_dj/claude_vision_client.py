@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Dict, Optional
 import time
 
-from config import (
+from autonomous_dj.config import (
     ANTHROPIC_API_KEY,
     CLAUDE_MODEL,
     CLAUDE_TEMPERATURE,
@@ -89,13 +89,15 @@ class ClaudeVisionClient:
     def analyze_traktor_screenshot(
         self,
         screenshot_path: str,
-        verbose: bool = True
+        verbose: bool = True,
+        custom_prompt: Optional[str] = None
     ) -> Dict:
         """
         Analizza screenshot Traktor con Claude Vision.
 
         Args:
             screenshot_path: Path assoluto screenshot PNG
+            custom_prompt: Prompt personalizzato (se None, usa prompt default)
             verbose: Se True, stampa dettagli analisi
 
         Returns:
@@ -123,8 +125,12 @@ class ClaudeVisionClient:
         if screenshot_file.suffix.lower() in ['.jpg', '.jpeg']:
             media_type = "image/jpeg"
 
-        # Prompt dettagliato per analisi Traktor
-        analysis_prompt = """
+        # Use custom prompt if provided, otherwise default
+        if custom_prompt:
+            analysis_prompt = custom_prompt
+        else:
+            # Prompt dettagliato per analisi Traktor
+            analysis_prompt = """
 Sei un esperto DJ che analizza l'interfaccia di Traktor Pro 3.
 
 Analizza questo screenshot molto attentamente e ritorna un JSON strutturato.

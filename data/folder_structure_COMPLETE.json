@@ -1,0 +1,395 @@
+{
+  "version": "3.0",
+  "last_updated": "2025-10-27",
+  "description": "COMPLETE multi-level folder structure for Traktor - ALL folders mapped",
+  "critical_info": {
+    "techno_folder_missing": true,
+    "alternative_for_techno": "House",
+    "navigation_depth": 4,
+    "total_music_folders": 50
+  },
+  "navigation_path_to_music_root": [
+    {
+      "step": 1,
+      "action": "reset_to_root",
+      "description": "Send 20× CC 73 (UP) to reach absolute root"
+    },
+    {
+      "step": 2,
+      "action": "navigate_down",
+      "steps": 7,
+      "target": "Explorer",
+      "cc": 72,
+      "delay": 2.5,
+      "description": "From root, go DOWN 7 steps to reach Explorer"
+    },
+    {
+      "step": 3,
+      "action": "expand",
+      "target": "Explorer",
+      "cc": 64,
+      "delay": 0.5,
+      "description": "Expand Explorer to show children"
+    },
+    {
+      "step": 4,
+      "action": "navigate_down",
+      "steps": 1,
+      "target": "Music Folders",
+      "cc": 72,
+      "delay": 2.5,
+      "description": "From Explorer, go DOWN 1 step to Music Folders"
+    },
+    {
+      "step": 5,
+      "action": "expand",
+      "target": "Music Folders",
+      "cc": 64,
+      "delay": 0.5,
+      "description": "Expand Music Folders to show drives"
+    },
+    {
+      "step": 6,
+      "action": "navigate_down",
+      "steps": 0,
+      "target": "C:\\Users\\Utente\\Music",
+      "cc": 72,
+      "delay": 0,
+      "description": "Already on first item (C:\\Users\\Utente\\Music)"
+    },
+    {
+      "step": 7,
+      "action": "expand",
+      "target": "C:\\Users\\Utente\\Music",
+      "cc": 64,
+      "delay": 0.5,
+      "description": "Expand C:\\Users\\Utente\\Music to show music folders"
+    },
+    {
+      "step": 8,
+      "action": "ready",
+      "description": "NOW at music folders level - can navigate to genres"
+    }
+  ],
+  "music_folders": {
+    "Ableton": {
+      "position": 1,
+      "tracks": 0,
+      "genre": "Production",
+      "usable": false
+    },
+    "Acid Jazz": {
+      "position": 2,
+      "tracks": 10,
+      "genre": "Jazz",
+      "usable": true
+    },
+    "Acustico": {
+      "position": 3,
+      "tracks": 5,
+      "genre": "Acoustic",
+      "usable": true
+    },
+    "Ambient": {
+      "position": 4,
+      "tracks": 15,
+      "genre": "Ambient",
+      "usable": true
+    },
+    "Breakbeat": {
+      "position": 5,
+      "tracks": 20,
+      "genre": "Breaks",
+      "usable": true
+    },
+    "Broken Beat": {
+      "position": 6,
+      "tracks": 10,
+      "genre": "Broken Beat",
+      "usable": true
+    },
+    "Casa Bertallot": {
+      "position": 7,
+      "tracks": 5,
+      "genre": "Various",
+      "usable": false
+    },
+    "Chill": {
+      "position": 8,
+      "tracks": 30,
+      "genre": "Chill",
+      "usable": true
+    },
+    "D'n'B": {
+      "position": 9,
+      "tracks": 50,
+      "genre": "Drum and Bass",
+      "usable": true
+    },
+    "Deep House": {
+      "position": 10,
+      "tracks": 40,
+      "genre": "House",
+      "usable": true,
+      "alternative_for": "Techno"
+    },
+    "Disco 70": {
+      "position": 11,
+      "tracks": 25,
+      "genre": "Disco",
+      "usable": true
+    },
+    "Down Beat Lounge": {
+      "position": 12,
+      "tracks": 20,
+      "genre": "Downtempo",
+      "usable": true
+    },
+    "Dub": {
+      "position": 13,
+      "tracks": 87,
+      "genre": "Dub",
+      "usable": true,
+      "priority": "high"
+    },
+    "Dub Step": {
+      "position": 14,
+      "tracks": 30,
+      "genre": "Dubstep",
+      "usable": true
+    },
+    "Elettro Jazz": {
+      "position": 15,
+      "tracks": 15,
+      "genre": "Electronic Jazz",
+      "usable": true
+    },
+    "Elettrojazz latin": {
+      "position": 16,
+      "tracks": 10,
+      "genre": "Latin Jazz",
+      "usable": true
+    },
+    "Funk": {
+      "position": 17,
+      "tracks": 25,
+      "genre": "Funk",
+      "usable": true
+    },
+    "Future bass": {
+      "position": 18,
+      "tracks": 20,
+      "genre": "Future Bass",
+      "usable": true
+    },
+    "Future bass atmo": {
+      "position": 19,
+      "tracks": 15,
+      "genre": "Future Bass",
+      "usable": true
+    },
+    "Future bass dub": {
+      "position": 20,
+      "tracks": 10,
+      "genre": "Future Bass",
+      "usable": true
+    },
+    "Future funk": {
+      "position": 21,
+      "tracks": 15,
+      "genre": "Future Funk",
+      "usable": true
+    },
+    "Future jungle": {
+      "position": 22,
+      "tracks": 10,
+      "genre": "Jungle",
+      "usable": true
+    },
+    "GarageBand": {
+      "position": 23,
+      "tracks": 0,
+      "genre": "Production",
+      "usable": false
+    },
+    "Hip hop": {
+      "position": 24,
+      "tracks": 30,
+      "genre": "Hip Hop",
+      "usable": true
+    },
+    "House": {
+      "position": 25,
+      "tracks": 30,
+      "genre": "House",
+      "usable": true,
+      "priority": "high",
+      "alternative_for": "Techno"
+    },
+    "House jazz": {
+      "position": 26,
+      "tracks": 15,
+      "genre": "Jazz House",
+      "usable": true
+    },
+    "House Lounge": {
+      "position": 27,
+      "tracks": 20,
+      "genre": "House",
+      "usable": true
+    },
+    "iTunes": {
+      "position": 28,
+      "tracks": 0,
+      "genre": "Library",
+      "usable": false
+    },
+    "Jazz": {
+      "position": 29,
+      "tracks": 25,
+      "genre": "Jazz",
+      "usable": true
+    },
+    "Jazz Step": {
+      "position": 30,
+      "tracks": 15,
+      "genre": "Jazz",
+      "usable": true
+    },
+    "Juke": {
+      "position": 31,
+      "tracks": 10,
+      "genre": "Juke",
+      "usable": true
+    },
+    "Jungle": {
+      "position": 32,
+      "tracks": 25,
+      "genre": "Jungle",
+      "usable": true
+    },
+    "Marcel T": {
+      "position": 33,
+      "tracks": 5,
+      "genre": "Personal",
+      "usable": false
+    },
+    "MP3 Normalizer": {
+      "position": 34,
+      "tracks": 0,
+      "genre": "Tool",
+      "usable": false
+    },
+    "Music": {
+      "position": 35,
+      "tracks": 10,
+      "genre": "Various",
+      "usable": false
+    },
+    "neutri br": {
+      "position": 36,
+      "tracks": 5,
+      "genre": "Unknown",
+      "usable": false
+    },
+    "Night Music": {
+      "position": 37,
+      "tracks": 20,
+      "genre": "Chill",
+      "usable": true
+    },
+    "Nu Disco": {
+      "position": 38,
+      "tracks": 25,
+      "genre": "Disco",
+      "usable": true
+    },
+    "Nu Hop": {
+      "position": 39,
+      "tracks": 15,
+      "genre": "Hip Hop",
+      "usable": true
+    },
+    "Nu Jazz": {
+      "position": 40,
+      "tracks": 20,
+      "genre": "Jazz",
+      "usable": true
+    },
+    "Nu Soul": {
+      "position": 41,
+      "tracks": 15,
+      "genre": "Soul",
+      "usable": true
+    },
+    "Reggae": {
+      "position": 42,
+      "tracks": 30,
+      "genre": "Reggae",
+      "usable": true
+    },
+    "Scratch": {
+      "position": 43,
+      "tracks": 0,
+      "genre": "Tool",
+      "usable": false
+    },
+    "To MP3 Converter": {
+      "position": 44,
+      "tracks": 0,
+      "genre": "Tool",
+      "usable": false
+    },
+    "Traktor": {
+      "position": 45,
+      "tracks": 0,
+      "genre": "Library",
+      "usable": false
+    },
+    "Traktor 2.5 Remix Deck": {
+      "position": 46,
+      "tracks": 0,
+      "genre": "Library",
+      "usable": false
+    },
+    "Trap": {
+      "position": 47,
+      "tracks": 20,
+      "genre": "Trap",
+      "usable": true
+    },
+    "Trip": {
+      "position": 48,
+      "tracks": 15,
+      "genre": "Trip Hop",
+      "usable": true
+    },
+    "Two Step": {
+      "position": 49,
+      "tracks": 10,
+      "genre": "UK Garage",
+      "usable": true
+    }
+  },
+  "genre_mapping": {
+    "Techno": "House",
+    "House": "House",
+    "Dub": "Dub",
+    "Deep House": "Deep House",
+    "Drum and Bass": "D'n'B",
+    "Dubstep": "Dub Step",
+    "Ambient": "Ambient",
+    "Breaks": "Breakbeat"
+  },
+  "recommended_folders": [
+    "House",
+    "Dub",
+    "Deep House",
+    "D'n'B",
+    "Breakbeat",
+    "Jungle",
+    "Nu Disco",
+    "Reggae",
+    "Trap"
+  ]
+}

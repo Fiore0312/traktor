@@ -1,0 +1,199 @@
+{
+  "version": "2.0",
+  "last_updated": "2025-10-27",
+  "description": "Multi-level folder structure for Traktor browser navigation",
+
+  "navigation_strategy": "hierarchical",
+
+  "hierarchy": {
+    "root": {
+      "position": 0,
+      "name": "ROOT",
+      "children": ["Track Collection", "Playlists", "Explorer"]
+    },
+
+    "Explorer": {
+      "tree_position_from_root": 2,
+      "expandable": true,
+      "children": ["Demo Content", "Music Folders"]
+    },
+
+    "Music Folders": {
+      "tree_position_from_explorer": 1,
+      "expandable": true,
+      "children": ["C:\\Users\\Utente\\Music"]
+    },
+
+    "C:\\Users\\Utente\\Music": {
+      "tree_position_from_music_folders": 0,
+      "expandable": true,
+      "is_final_parent": true,
+      "children": "music_folders"
+    }
+  },
+
+  "music_folders": {
+    "Ableton": {
+      "tree_position": 0,
+      "approximate_tracks": 0,
+      "genre": "Production"
+    },
+    "Acid Jazz": {
+      "tree_position": 1,
+      "approximate_tracks": 10,
+      "genre": "Jazz"
+    },
+    "Acustico": {
+      "tree_position": 2,
+      "approximate_tracks": 5,
+      "genre": "Acoustic"
+    },
+    "Ambient": {
+      "tree_position": 3,
+      "approximate_tracks": 15,
+      "genre": "Ambient"
+    },
+    "Breakbeat": {
+      "tree_position": 4,
+      "approximate_tracks": 20,
+      "genre": "Breaks"
+    },
+    "Broken Beat": {
+      "tree_position": 5,
+      "approximate_tracks": 10,
+      "genre": "Broken Beat"
+    },
+    "Casa Bertallot": {
+      "tree_position": 6,
+      "approximate_tracks": 5,
+      "genre": "Various"
+    },
+    "Chill": {
+      "tree_position": 7,
+      "approximate_tracks": 30,
+      "genre": "Chill"
+    },
+    "D'n'B": {
+      "tree_position": 8,
+      "approximate_tracks": 50,
+      "genre": "Drum and Bass"
+    },
+    "Deep House": {
+      "tree_position": 9,
+      "approximate_tracks": 40,
+      "genre": "House"
+    },
+    "Disco 70": {
+      "tree_position": 10,
+      "approximate_tracks": 25,
+      "genre": "Disco"
+    },
+    "Down Beat Lounge": {
+      "tree_position": 11,
+      "approximate_tracks": 20,
+      "genre": "Downtempo"
+    },
+    "Dub": {
+      "tree_position": 12,
+      "approximate_tracks": 87,
+      "genre": "Dub"
+    },
+    "Dub Step": {
+      "tree_position": 13,
+      "approximate_tracks": 30,
+      "genre": "Dubstep"
+    },
+    "Elettro Jazz": {
+      "tree_position": 14,
+      "approximate_tracks": 15,
+      "genre": "Electronic Jazz"
+    },
+    "Elettrojazz latin": {
+      "tree_position": 15,
+      "approximate_tracks": 10,
+      "genre": "Latin Jazz"
+    },
+    "Funk": {
+      "tree_position": 16,
+      "approximate_tracks": 25,
+      "genre": "Funk"
+    },
+    "Future bass": {
+      "tree_position": 17,
+      "approximate_tracks": 20,
+      "genre": "Future Bass"
+    },
+    "Future bass atmo": {
+      "tree_position": 18,
+      "approximate_tracks": 15,
+      "genre": "Future Bass"
+    },
+    "Future bass dub": {
+      "tree_position": 19,
+      "approximate_tracks": 10,
+      "genre": "Future Bass"
+    },
+    "Future funk": {
+      "tree_position": 20,
+      "approximate_tracks": 15,
+      "genre": "Future Funk"
+    },
+    "Future jungle": {
+      "tree_position": 21,
+      "approximate_tracks": 10,
+      "genre": "Jungle"
+    },
+    "GarageBand": {
+      "tree_position": 22,
+      "approximate_tracks": 0,
+      "genre": "Production"
+    },
+    "Hip hop": {
+      "tree_position": 23,
+      "approximate_tracks": 30,
+      "genre": "Hip Hop"
+    },
+    "House": {
+      "tree_position": 24,
+      "approximate_tracks": 30,
+      "genre": "House"
+    },
+    "House Lounge": {
+      "tree_position": 25,
+      "approximate_tracks": 20,
+      "genre": "House"
+    }
+  },
+
+  "navigation_path_to_music": [
+    {"action": "reset_to_root"},
+    {"action": "navigate_down", "steps": 2, "target": "Explorer"},
+    {"action": "expand"},
+    {"action": "navigate_down", "steps": 1, "target": "Music Folders"},
+    {"action": "expand"},
+    {"action": "navigate_down", "steps": 0, "target": "C:\\Users\\Utente\\Music"},
+    {"action": "expand"},
+    {"action": "ready", "message": "Now at music folders level - can navigate to specific genres"}
+  ],
+
+  "quick_access": {
+    "Dub": {
+      "full_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music > Dub",
+      "tree_position_final": 12
+    },
+    "House": {
+      "full_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music > House",
+      "tree_position_final": 24
+    },
+    "Deep House": {
+      "full_path": "Explorer > Music Folders > C:\\Users\\Utente\\Music > Deep House",
+      "tree_position_final": 9
+    }
+  },
+
+  "notes": {
+    "techno_not_found": "IMPORTANT: No 'Techno' folder found in structure. System should use 'House' or 'Deep House' as alternative",
+    "multi_level": "This structure requires 4 navigation steps to reach music folders",
+    "timing": "Each expand operation needs 0.5s pause, tree navigation needs 2.0s between steps"
+  }
+}

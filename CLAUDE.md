@@ -14,12 +14,14 @@ Autonomous DJ system for Traktor Pro 3 with **AI-powered vision analysis**, **MI
 
 **Current Status:**
 - ✅ Backend core complete (vision, MIDI, safety, workflow)
+- ✅ Intelligent track selection integrated
+- ✅ Full-stack web application (API + frontend)
+- ✅ OpenRouter LLM integration
 - ✅ GitHub repository created with protected API keys
 - ✅ Multi-screen vision capture working
 - ✅ Claude Vision AI integration complete
 - ✅ Safety layer implemented
-- ✅ Track matching algorithm prepared
-- 🔄 Next: Full-stack application (API server + web UI)
+- 🔄 Next: Testing and refinement
 
 **Architecture**: Vision-guided system with Claude AI integration and real-time MIDI control.
 
@@ -46,8 +48,10 @@ Autonomous DJ system for Traktor Pro 3 with **AI-powered vision analysis**, **MI
 │  ├─ Workflow Controller (command processor)            │
 │  ├─ Vision System (multi-screen screenshot)            │
 │  ├─ Claude Vision AI (UI analysis)                     │
+│  ├─ OpenRouter LLM (natural language parsing)          │
 │  ├─ MIDI Driver (Traktor control)                      │
 │  ├─ Safety Checks (DJ best practices)                  │
+│  ├─ Intelligent Track Selector (Camelot Wheel)         │
 │  ├─ Track Matcher (compatibility algorithm)            │
 │  └─ Collection Parser (Traktor database)               │
 │                                                         │
@@ -173,6 +177,40 @@ RUN_VISION_WORKFLOW_LOOP.bat
 
 ---
 
+## 🎧 INTELLIGENT TRACK SELECTION
+
+**Automatic harmonic mixing using Camelot Wheel!**
+
+### Quick Usage
+
+**Web UI**:
+1. Open http://localhost:8000
+2. Click: "🎧 Auto-Select Compatible" button
+3. Or type: "Trova una traccia compatibile"
+
+**What it does**:
+- ✅ Analyzes current deck (BPM + Key)
+- ✅ Finds compatible tracks (Camelot Wheel rules)
+- ✅ Navigates to best match
+- ✅ Loads on target deck
+- ✅ Sets volume to 0 (safety)
+
+### Camelot Wheel Rules
+
+Compatible keys:
+- Same number, different letter (8A → 8B)
+- ±1 number, same letter (8A → 7A or 9A)
+- BPM range ±6%
+
+**Setup Required**:
+1. Analyze keys in Traktor: Select all → Analyze → Determine Key
+2. Parse collection: `python collection_parser_xml.py`
+3. Test system: `python test_intelligent_integration.py`
+
+**Documentation**: See `README_INTEGRATION_COMPLETE.md` for details.
+
+---
+
 ## 📁 PROJECT STRUCTURE
 
 ```
@@ -223,6 +261,12 @@ traktor/
 │   ├── logs/                           # Application logs
 │   └── memory/                         # Persistent knowledge (ChromaDB)
 │
+├── camelot_matcher.py                  # Camelot Wheel logic
+├── collection_parser_xml.py            # Parse collection.nml
+├── midi_navigator.py                   # MIDI browser navigation
+├── tracks.db                           # SQLite database (393 tracks)
+├── test_intelligent_integration.py     # Integration test suite
+├── README_INTEGRATION_COMPLETE.md      # Integration guide
 ├── traktor_midi_driver.py              # MIDI communication
 ├── traktor_safety_checks.py            # Safety rules validation
 ├── DJ_WORKFLOW_RULES.md                # Professional workflow rules
@@ -381,16 +425,17 @@ See: `MIDI_INTERACTION_MODE_FIX.md`
 - [x] Workflow controller
 - [x] GitHub repository setup
 
-### Phase 2: Full-Stack Application 🔄 IN PROGRESS
+### Phase 2: Full-Stack Application ✅ COMPLETE
 
-- [ ] FastAPI server
-- [ ] Web Frontend (chat interface)
-- [ ] Real-time status display
-- [ ] WebSocket for updates
+- [x] FastAPI server
+- [x] Web Frontend (chat interface)
+- [x] Real-time status display
+- [x] WebSocket for updates
+- [x] Intelligent track selection
 
-### Phase 3: Intelligence & Automation
+### Phase 3: Intelligence & Automation 🔄 IN PROGRESS
 
-- [ ] Track selection AI
+- [x] Track selection AI (Camelot Wheel)
 - [ ] Energy flow analysis
 - [ ] Phrase-aware mixing
 - [ ] Persistent memory
@@ -406,6 +451,7 @@ See: `MIDI_INTERACTION_MODE_FIX.md`
 3. **`DJ_WORKFLOW_RULES.md`** - Professional workflow rules
 4. **`README_VISION_WORKFLOW.md`** - Vision system guide
 5. **`MIDI_INTERACTION_MODE_FIX.md`** - Critical MIDI setup
+6. **`README_INTEGRATION_COMPLETE.md`** - Intelligent selection guide
 
 ---
 

@@ -85,12 +85,14 @@
   },
 
   "browser": {
-    "scroll_list": 74,
+    "scroll_list_down": 74,
+    "scroll_list_up": 92,
     "scroll_tree_up": 73,
     "scroll_tree_down": 72,
     "expand_collapse": 64,
     "navigation_behavior": "2x_movement",
-    "navigation_delay_ms": 2000
+    "navigation_delay_ms": 2000,
+    "note": "Browser.Tree (folders): CC 72/73, Browser.List (tracks): CC 74/92"
   },
 
   "fx_unit_1": {

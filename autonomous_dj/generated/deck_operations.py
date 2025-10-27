@@ -39,7 +39,10 @@ try:
     from langchain_core.messages import AIMessage
     PERSISTENT_LEARNING_ENABLED = True
 except ImportError as e:
-    print(f"[WARN] Persistent learning not available: {e}")
+    # Persistent learning is optional - system works without it
+    # Uncomment below for debugging if needed:
+    # import logging
+    # logging.debug(f"Persistent learning not available: {e}")
     PERSISTENT_LEARNING_ENABLED = False
     AIMessage = None  # Fallback
 

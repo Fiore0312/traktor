@@ -56,3 +56,4 @@ opentelemetry-exporter-otlp-proto-http==1.38.0
 opentelemetry-proto==1.38.0
 opentelemetry-sdk==1.38.0
 opentelemetry-semantic-conventions==0.59b0
+requests>=2.31.0  # HTTP client for OpenRouter API

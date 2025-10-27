@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ AI - Autonomous Traktor Control</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Main Container (Claude.ai style) -->
+    <div class="app-container">
+
+        <!-- Sidebar (left menu like Claude.ai) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">
+                    <span class="logo-icon">🎧</span>
+                    <span class="logo-text">DJ AI</span>
+                </h1>
+            </div>
+
+            <!-- Mode Selector -->
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="manual">
+                    <span class="mode-icon">✋</span>
+                    <span>Manual</span>
+                </button>
+                <button class="mode-btn" data-mode="assisted">
+                    <span class="mode-icon">🤝</span>
+                    <span>Assisted</span>
+                </button>
+                <button class="mode-btn" data-mode="autonomous">
+                    <span class="mode-icon">🤖</span>
+                    <span>Autonomous</span>
+                </button>
+            </div>
+
+            <!-- Traktor Status -->
+            <div class="status-section">
+                <h3 class="status-title">Traktor Status</h3>
+
+                <!-- Browser -->
+                <div class="status-card">
+                    <div class="status-label">Browser</div>
+                    <div class="status-value" id="browser-status">Loading...</div>
+                </div>
+
+                <!-- Deck A -->
+                <div class="status-card">
+                    <div class="status-label">Deck A</div>
+                    <div class="status-value" id="deck-a-status">
+                        <div class="deck-status-line"><strong>Status:</strong> <span id="deck-a-state">--</span></div>
+                        <div class="deck-status-line"><strong>Track:</strong> <span id="deck-a-track">--</span></div>
+                        <div class="deck-status-line"><strong>Playing:</strong> <span id="deck-a-playing">--</span></div>
+                    </div>
+                </div>
+
+                <!-- Deck B -->
+                <div class="status-card">
+                    <div class="status-label">Deck B</div>
+                    <div class="status-value" id="deck-b-status">
+                        <div class="deck-status-line"><strong>Status:</strong> <span id="deck-b-state">--</span></div>
+                        <div class="deck-status-line"><strong>Track:</strong> <span id="deck-b-track">--</span></div>
+                        <div class="deck-status-line"><strong>Playing:</strong> <span id="deck-b-playing">--</span></div>
+                    </div>
+                </div>
+
+                <!-- Connection Status -->
+                <div class="connection-status">
+                    <span class="connection-indicator" id="connection-indicator"></span>
+                    <span class="connection-text" id="connection-text">Connecting...</span>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h3 class="status-title">Quick Actions</h3>
+                <button class="action-btn" data-command="Mostrami lo stato">
+                    📊 Show Status
+                </button>
+                <button class="action-btn" data-command="Carica una traccia su Deck A">
+                    ⬇️ Load Track A
+                </button>
+                <button class="action-btn" data-command="Carica una traccia su Deck B">
+                    ⬇️ Load Track B
+                </button>
+                <button class="action-btn" data-command="Trova una traccia compatibile">
+                    🎧 Auto-Select Compatible
+                </button>
+                <button class="action-btn" data-command="Fai play su Deck A">
+                    ▶️ Play Deck A
+                </button>
+                <button class="action-btn" data-command="Fai play su Deck B">
+                    ▶️ Play Deck B
+                </button>
+                <button class="action-btn" data-command="Mixale">
+                    🎚️ Mix Transition (8s)
+                </button>
+                <button class="action-btn autonomous-btn" data-command="Start autonomous DJ">
+                    🤖 Start Autonomous Session
+                </button>
+            </div>
+
+            <!-- Footer -->
+            <div class="sidebar-footer">
+                <div class="footer-link">
+                    <a href="https://github.com/Fiore0312/traktor" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+                <div class="footer-link">
+                    <a href="/docs" target="_blank">
+                        API Docs
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area (Claude.ai style) -->
+        <main class="main-content">
+            <!-- Chat Header -->
+            <header class="chat-header">
+                <h2 class="chat-title">Autonomous DJ Control</h2>
+                <div class="header-actions">
+                    <button class="header-btn" id="clear-chat" title="Clear chat">
+                        🗑️
+                    </button>
+                </div>
+            </header>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chat-messages">
+                <!-- Welcome Message -->
+                <div class="message assistant-message">
+                    <div class="message-avatar">🎧</div>
+                    <div class="message-content">
+                        <p><strong>Welcome to DJ AI!</strong></p>
+                        <p>I'm your autonomous DJ assistant. I can help you control Traktor Pro 3 through natural language commands.</p>
+                        <p><strong>Try commands like:</strong></p>
+                        <ul>
+                            <li>"Load a Techno track on Deck A"</li>
+                            <li>"Show me the current status"</li>
+                            <li>"Play Deck B"</li>
+                            <li>"Start autonomous mixing"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <textarea
+                        class="chat-input"
+                        id="chat-input"
+                        placeholder="Type a command... (e.g., 'Load a track on Deck A')"
+                        rows="1"
+                    ></textarea>
+                    <button class="send-btn" id="send-btn" title="Send message">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="input-hint">Press <kbd>Enter</kbd> to send, <kbd>Shift+Enter</kbd> for new line</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/app.js"></script>
+</body>
+</html>

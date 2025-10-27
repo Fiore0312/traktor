@@ -10,8 +10,18 @@ from typing import Dict, Any, Optional
 from dataclasses import dataclass, asdict, fields
 from filelock import FileLock
 import sys
-sys.path.append(str(Path(__file__).parent.parent))
-from config.config_loader import get_config
+
+# Add project root to path
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
+# Now we can import from config
+try:
+    from config.config_loader import get_config
+except ImportError:
+    # Fallback if config_loader is not found
+    def get_config():
+        return {}
 
 
 @dataclass
