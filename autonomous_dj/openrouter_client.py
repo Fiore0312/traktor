@@ -85,6 +85,7 @@ Available actions:
 - GET_STATUS: Show current system status
 - START_AUTONOMOUS: Enable autonomous DJ mode
 - NAVIGATE_FOLDER: Navigate to a folder in browser (e.g., 'dub', 'techno')
+- NAVIGATE_AND_PLAY: Navigate to folder AND load+play a track (compound action)
 - FIND_COMPATIBLE_TRACK: Find and load a harmonically compatible track (uses Camelot Wheel + BPM matching)
 - MIX_TRANSITION: Mix between two decks
 - ADJUST_EQ: Adjust EQ controls
@@ -121,6 +122,9 @@ User: "What's playing?"
 
 User: "Navigate to the dub folder"
 {"action": "NAVIGATE_FOLDER", "deck": null, "folder": "dub", "genre": null, "bpm_range": null, "energy_level": null, "confidence": 0.95, "reasoning": "Clear navigation command to dub folder"}
+
+User: "vai alla cartella dub e suona una traccia"
+{"action": "NAVIGATE_AND_PLAY", "deck": "A", "folder": "dub", "genre": null, "bpm_range": null, "energy_level": null, "confidence": 0.95, "reasoning": "Navigate to dub folder and play a track - compound action"}
 
 User: "Find a compatible track for Deck A"
 {"action": "FIND_COMPATIBLE_TRACK", "deck": "B", "genre": null, "bpm_range": null, "energy_level": null, "confidence": 0.9, "reasoning": "Smart matching request - will analyze Deck A and find compatible track for Deck B"}

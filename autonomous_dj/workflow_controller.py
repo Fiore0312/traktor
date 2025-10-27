@@ -15,6 +15,7 @@ from traktor_midi_driver import TraktorMIDIDriver
 from traktor_safety_checks import TraktorSafetyChecks
 from autonomous_dj.browser_navigator import BrowserNavigator
 from autonomous_dj.hierarchical_navigator import HierarchicalNavigator
+from autonomous_dj.generated.autonomous_browser_navigator import AutonomousBrowserNavigator
 from camelot_matcher import find_compatible_tracks
 from midi_navigator import TraktorNavigator
 # from track_matcher import TrackMatcher  # TODO: implement
@@ -46,13 +47,17 @@ class DJWorkflowController:
         self.midi = TraktorMIDIDriver(dry_run=False)
         self.safety = TraktorSafetyChecks(self.midi)
         
-        # Navigation (only if vision enabled)
+        # Navigation
         if vision_enabled:
+            # Vision-guided navigation (with AI)
             self.browser_nav = BrowserNavigator(self.vision, self.ai_vision, self.midi)
             self.hierarchical_nav = HierarchicalNavigator(self.vision, self.ai_vision, self.midi)
+            self.autonomous_nav = None  # Not needed with vision
         else:
+            # Blind navigation (no vision, no AI cost!)
             self.browser_nav = None
             self.hierarchical_nav = None
+            self.autonomous_nav = AutonomousBrowserNavigator(self.midi)  # NEW: Tested navigator!
 
         # State management
         self.current_state = {
@@ -146,6 +151,9 @@ class DJWorkflowController:
 
         elif action == 'NAVIGATE_FOLDER':
             return self._action_navigate_folder(plan)
+
+        elif action == 'NAVIGATE_AND_PLAY':
+            return self._action_navigate_and_play(plan)
 
         elif action == 'FIND_COMPATIBLE_TRACK':
             return self._action_find_compatible_track(plan)
@@ -503,24 +511,37 @@ Deck B: {state['deck_b'].get('status', 'unknown')}
         vision_enabled = config.USE_AI_FOR_VISION_ANALYSIS
         
         if not vision_enabled or self.hierarchical_nav is None:
-            # BLIND MODE: Simple MIDI navigation
-            print(f"[CONTROLLER] BLIND MODE: Attempting simple navigation to '{folder_name}'...")
-            
-            # In blind mode, we can only do basic scrolling
-            # This assumes the folder is somewhere in the list
-            # Not as reliable as vision-guided, but it's free!
-            
-            # Try scrolling down to find it (max 20 scrolls)
-            for i in range(20):
-                self.midi.browser_scroll_tracks(direction=1)
-                time.sleep(0.2)
-            
-            return {
-                'success': True,
-                'message': f"⚠️ Blind navigation to '{folder_name}'\n"
-                          f"Scrolled down 20 times. Please verify manually.\n"
-                          f"💡 For accurate navigation, enable Vision AI."
-            }
+            # BLIND MODE: Use AutonomousBrowserNavigator (TESTED & WORKING!)
+            print(f"[CONTROLLER] BLIND MODE: Navigating to '{folder_name}' using position tracking...")
+
+            if self.autonomous_nav is None:
+                return {
+                    'success': False,
+                    'message': "Autonomous navigator not initialized"
+                }
+
+            try:
+                # Use the tested navigate_to_folder method
+                success, message = self.autonomous_nav.navigate_to_folder(folder_name)
+
+                if success:
+                    return {
+                        'success': True,
+                        'message': f"✅ Navigated to '{folder_name}' (blind mode)\n{message}"
+                    }
+                else:
+                    return {
+                        'success': False,
+                        'message': f"❌ Navigation failed: {message}"
+                    }
+            except Exception as e:
+                print(f"[CONTROLLER] Autonomous navigation error: {e}")
+                import traceback
+                traceback.print_exc()
+                return {
+                    'success': False,
+                    'message': f"Error: {str(e)}"
+                }
 
         # NORMAL MODE: Use vision-guided navigation
         print(f"[CONTROLLER] Navigating to folder '{folder_name}' with vision guidance...")
@@ -544,6 +565,124 @@ Deck B: {state['deck_b'].get('status', 'unknown')}
                 'success': False,
                 'message': f"Errore durante navigazione: {str(e)}"
             }
+
+    def _action_navigate_and_play(self, plan: Dict) -> Dict:
+        """
+        Compound action: Navigate to folder, load track, and play.
+
+        This handles commands like:
+        - "vai alla cartella dub e suona una traccia"
+        - "play something from house"
+        - "load and play from techno on deck A"
+        """
+
+        folder_name = plan.get('folder', '')
+        deck = plan.get('deck', 'A')  # Default to Deck A if not specified
+
+        if not folder_name:
+            return {
+                'success': False,
+                'message': "Specifica una cartella da cui caricare"
+            }
+
+        print(f"[CONTROLLER] NAVIGATE_AND_PLAY: folder='{folder_name}', deck={deck}")
+
+        # Step 0: SAFETY - Set all volumes to 0 and crossfader to center
+        print(f"[CONTROLLER] Step 0/5: SAFETY - Resetting mixer to safe state...")
+
+        # Volumes to 0
+        self.midi.set_deck_a_volume(0)
+        time.sleep(0.1)
+        self.midi.set_deck_b_volume(0)
+        time.sleep(0.1)
+
+        # Crossfader to center (64)
+        self.midi.set_crossfader(64)
+        time.sleep(0.1)
+
+        print(f"[CONTROLLER] OK Mixer safe: All volumes = 0, Crossfader = center")
+
+        # Step 1: Navigate to folder
+        print(f"[CONTROLLER] Step 1/5: Navigating to '{folder_name}'...")
+        nav_result = self._action_navigate_folder({'folder': folder_name})
+
+        if not nav_result['success']:
+            return {
+                'success': False,
+                'message': f"[ERROR] Navigation failed: {nav_result['message']}"
+            }
+
+        print(f"[CONTROLLER] OK Navigated to '{folder_name}'")
+        time.sleep(1.5)  # Wait for folder to expand and tracks to load
+
+        # Step 2: Select first track (scroll down once to highlight)
+        print(f"[CONTROLLER] Step 2/5: Selecting first track...")
+
+        # Use DIRECT MIDI like in test_track_navigation.py (PROVEN TO WORK!)
+        CC_LIST_DOWN = 74  # Browser.List scroll DOWN
+        print(f"[CONTROLLER] Sending CC {CC_LIST_DOWN} = 127 (Browser.List DOWN)")
+        self.midi.send_cc(CC_LIST_DOWN, 127)
+        time.sleep(0.5)
+
+        print(f"[CONTROLLER] OK First track selected")
+
+        # Step 3: Load track on deck
+        print(f"[CONTROLLER] Step 3/5: Loading track on Deck {deck}...")
+
+        # Safety check
+        if not self.safety.pre_load_safety_check(deck):
+            return {
+                'success': False,
+                'message': f"[ERROR] Safety check failed for Deck {deck}"
+            }
+
+        # Load track
+        if deck == 'A':
+            self.midi.load_track_deck_a()
+        else:
+            self.midi.load_track_deck_b()
+
+        time.sleep(2)  # Wait for track to load
+
+        # Post-load safety setup (volume to 0, NO SYNC for first track!)
+        # IMPORTANTE: is_first_track=True per NON attivare SYNC (deck sarà MASTER)
+        self.safety.post_load_safety_setup(deck, is_first_track=True)
+        print(f"[CONTROLLER] OK Track loaded on Deck {deck}")
+
+        # Step 4: Play deck
+        print(f"[CONTROLLER] Step 4/5: Starting playback on Deck {deck}...")
+
+        if deck == 'A':
+            self.midi.play_deck_a()
+        else:
+            self.midi.play_deck_b()
+
+        time.sleep(0.5)
+        print(f"[CONTROLLER] OK Deck {deck} playing")
+
+        # Step 5: Fade in volume gradually (from 0 to 85%)
+        print(f"[CONTROLLER] Step 5/5: Fading in volume to 85%...")
+        target_volume = int(127 * 0.85)
+
+        if deck == 'A':
+            self.midi.set_deck_a_volume(target_volume)
+        else:
+            self.midi.set_deck_b_volume(target_volume)
+
+        time.sleep(0.3)
+
+        # FINAL CHECK: Ensure crossfader is centered (sometimes it drifts)
+        print(f"[CONTROLLER] Final check: Crossfader to center...")
+        self.midi.set_crossfader(64)
+        time.sleep(0.1)
+
+        return {
+            'success': True,
+            'message': f"[SUCCESS] Complete!\n"
+                      f"[FOLDER] Navigated to '{folder_name}'\n"
+                      f"[TRACK] Loaded track on Deck {deck}\n"
+                      f"[PLAYING] Deck {deck} playing at 85% volume"
+        }
 
     def _action_find_compatible_track(self, plan: Dict) -> Dict:
         """

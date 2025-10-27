@@ -122,9 +122,22 @@ class AutonomousBrowserNavigator:
             print("[!]  'Techno' folder not found - using 'House' as alternative")
             folder_name = "House"
 
-        # Check if folder exists
-        if folder_name not in music_folders:
-            return False, f"[FAIL] Folder '{folder_name}' not found in music folders"
+        # Case-insensitive folder matching (LLM might send lowercase)
+        folder_name_lower = folder_name.lower()
+        folder_match = None
+        for key in music_folders.keys():
+            if key.lower() == folder_name_lower:
+                folder_match = key
+                break
+
+        if folder_match is None:
+            available = ", ".join(music_folders.keys())
+            return False, f"[FAIL] Folder '{folder_name}' not found. Available: {available[:100]}"
+
+        # Use correct case from JSON
+        if folder_match != folder_name:
+            print(f"[INFO] Normalized '{folder_name}' -> '{folder_match}'")
+        folder_name = folder_match
 
         # Get target position within music folders
         target_position = music_folders[folder_name]["position"]
